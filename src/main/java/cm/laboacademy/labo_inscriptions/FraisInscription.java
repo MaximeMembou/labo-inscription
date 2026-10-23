@@ -21,4 +21,8 @@ public class FraisInscription {
 
         return boursier ? base / 2 : base;
     }
+        public int calculerAvecReduction(String niveau, boolean boursier, boolean anticipee) {
+        int montant = calculer(niveau, boursier);
+        return anticipee ? montant * 90 / 100 : montant;
+    }
 }
