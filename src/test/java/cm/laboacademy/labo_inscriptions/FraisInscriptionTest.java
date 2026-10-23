@@ -27,4 +27,13 @@ class FraisInscriptionTest {
         assertThrows(IllegalArgumentException.class,
                 () -> frais.calculer("X9", false));
     }
+        @Test
+    void inscriptionAnticipeeBeneficieDe10PourCent() {
+        assertEquals(45000, frais.calculerAvecReduction("L2", false, true));
+    }
+
+    @Test
+    void sansInscriptionAnticipeePasDeReduction() {
+        assertEquals(50000, frais.calculerAvecReduction("L2", false, false));
+    }
 }
